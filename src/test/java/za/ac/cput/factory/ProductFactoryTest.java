@@ -36,7 +36,7 @@ class ProductFactoryTest {
 
     @Test
     void testUpdateProduct() {
-        Product updatedProduct = ProductFactory.updateProduct(101, "Gaming Laptop - 32GB RAM, 1TB SSD","list");
+        Product updatedProduct = ProductFactory.updateProduct(101, "Gaming Laptop - 32GB RAM, 1TB SSD", "Electronics");
         assertNotNull(updatedProduct);
         assertEquals("Gaming Laptop - 32GB RAM, 1TB SSD", updatedProduct.getProductDetails());
     }
@@ -47,8 +47,4 @@ class ProductFactoryTest {
         assertNull(ProductFactory.readProduct(101));
     }
 
-    @Test
-    void testMain() {
-        assertDoesNotThrow(() -> ProductFactory.main(new String[]{}));
-    }
 }

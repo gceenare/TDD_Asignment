@@ -20,7 +20,4 @@ class CustomerFactoryTest {
     void createCustomer() {
     }
 
-    @Test
-    void main() {
-    }
 }

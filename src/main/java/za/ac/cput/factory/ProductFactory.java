@@ -23,12 +23,12 @@ public class ProductFactory {
         return productDatabase.get(orderIdentification);
     }
 
-    public static Product updateProduct(int orderIdentification, String productDetails, String productList) {
+    public static Product updateProduct(int orderIdentification, String newProductDetails, String newProductList) {
         if (productDatabase.containsKey(orderIdentification)) {
             Product updatedProduct = new Product.Builder()
                     .setOrderIdentification(orderIdentification)
-                    .setProductDetails(productDetails)
-                    .setProductList(productList)
+                    .setProductDetails(newProductDetails)
+                    .setProductList(newProductList)
                     .build();
 
             productDatabase.put(orderIdentification, updatedProduct);
@@ -39,19 +39,5 @@ public class ProductFactory {
 
     public static boolean deleteProduct(int orderIdentification) {
         return productDatabase.remove(orderIdentification) != null;
-    }
-
-    public static void main(String[] args) {
-        Product p1 = createProduct(101, "Laptop - 16GB RAM, 512GB SSD", "Electronics");
-        System.out.println("Created: " + p1);
-
-        Product readP1 = readProduct(101);
-        System.out.println("Read: " + readP1);
-
-        Product updatedP1 = updateProduct(101, "Laptop - 32GB RAM, 1TB SSD", "Electronics");
-        System.out.println("Updated: " + updatedP1);
-
-        boolean deletedP1 = deleteProduct(101);
-        System.out.println("Deleted: " + deletedP1);
     }
 }
