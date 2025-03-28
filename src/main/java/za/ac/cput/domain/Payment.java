@@ -4,8 +4,8 @@ package za.ac.cput.domain;
 
     public class Payment {
         private  int orderIdentificationNumber;
-        private  String amount;
-        private String cardNumber;
+        public   String amount;
+        public String cardNumber;
 
 
         private Payment(Builder builder) {

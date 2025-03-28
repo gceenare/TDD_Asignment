@@ -1,8 +1,8 @@
 package za.ac.cput.domain;
 
 public class Customer {
-    private String address;
-    private String payment;
+    public String address;
+    public String payment;
 
     private Customer(Builder builder) {
         this.address = builder.address;
