@@ -1,14 +1,14 @@
 //package za.ac.cput.domain;
 //
 //
-//    public class Delivery extends Payment {
-//        private final String name;
-//        private final String date;
-//        private final String address;
+//    public class Delivery {
+//        privat String name;
+//        private String date;
+//        private  String address;
 //
 //
 //        private Delivery(Builder builder) {
-//            super(builder); // Calls the parent class constructor
+//            
 //            this.name = builder.name;
 //            this.date = builder.date;
 //            this.address = builder.address;
@@ -30,17 +30,17 @@
 ////        @Override
 ////        public String toString() {
 ////            return "Delivery{" +
-////                    "orderIdentificationNumber=" + getOrderIdentificationNumber() +
-////                    ", amount=" + getAmount() +
-////                    ", paymentMethod='" + getPaymentMethod() + '\'' +
-////                    ", name='" + name + '\'' +
+////                   
+////       
+////                    
+////                   ", name='" + name + '\'' +
 ////                    ", date='" + date + '\'' +
 ////                    ", address='" + address + '\'' +
 ////                    '}';
 ////        }
 //
 //
-//        public static class Builder extends Payment.Builder {
+//        public static class Builder  {
 //            private String name;
 //            private String date;
 //            private String address;
