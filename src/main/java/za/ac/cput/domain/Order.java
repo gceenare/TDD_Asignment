@@ -2,7 +2,7 @@ package za.ac.cput.domain;
 
 public class Order {
     private int orderIdentification;
-    private int productDetails;
+    private String productDetails;
     private String orderType;
 
     private Order(Builder builder) {
@@ -15,7 +15,7 @@ public class Order {
         return orderIdentification;
     }
 
-    public int getProductDetails() {
+    public String getProductDetails() {
         return productDetails;
     }
 
@@ -27,14 +27,14 @@ public class Order {
     public String toString() {
         return "Order{" +
                 "orderIdentification=" + orderIdentification +
-                ", productDetails=" + productDetails +
+                ", productDetails='" + productDetails + '\'' +
                 ", orderType='" + orderType + '\'' +
                 '}';
     }
 
     public static class Builder {
         private int orderIdentification;
-        private int productDetails;
+        private String productDetails;
         private String orderType;
 
         public Builder setOrderIdentification(int orderIdentification) {
@@ -42,7 +42,7 @@ public class Order {
             return this;
         }
 
-        public Builder setProductDetails(int productDetails) {
+        public Builder setProductDetails(String productDetails) {
             this.productDetails = productDetails;
             return this;
         }
