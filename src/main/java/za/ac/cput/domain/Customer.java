@@ -1,31 +1,20 @@
 package za.ac.cput.domain;
 
 public class Customer {
+    private String address;
+    private String payment;
 
-   private String address;
-   private String payment;
-
-
-    public Customer() {
-    }
-
-    public Customer(String address, String payment) {
-        this.address = address;
-        this.payment = payment;
+    private Customer(Builder builder) {
+        this.address = builder.address;
+        this.payment = builder.payment;
     }
 
     public String getAddress() {
         return address;
     }
-    public void setAddress(String address) {
-        this.address = address;
-    }
 
     public String getPayment() {
         return payment;
-    }
-    public void setPayment(String payment) {
-        this.payment = payment;
     }
 
     @Override
@@ -35,6 +24,23 @@ public class Customer {
                 ", payment='" + payment + '\'' +
                 '}';
     }
+
+    public static class Builder {
+        private String address;
+        private String payment;
+
+        public Builder setAddress(String address) {
+            this.address = address;
+            return this;
+        }
+
+        public Builder setPayment(String payment) {
+            this.payment = payment;
+            return this;
+        }
+
+        public Customer build() {
+            return new Customer(this);
+        }
+    }
 }
-
-

@@ -1,38 +1,26 @@
 package za.ac.cput.domain;
 
 public class Product {
-
-   private int orderIdentification;
+    private int orderIdentification;
     private String productDetails;
-   private String productList;
+    private String productList;
 
-
-    public Product() {
+    private Product(Builder builder) {
+        this.orderIdentification = builder.orderIdentification;
+        this.productDetails = builder.productDetails;
+        this.productList = builder.productList;
     }
-    public Product(int orderIdentification, String productDetails, String productList) {
-        this.orderIdentification = orderIdentification;
-        this.productDetails = productDetails;
-        this.productList = productList;
 
-    }
     public int getOrderIdentification() {
         return orderIdentification;
     }
-    public void setOrderIdentification(int orderIdentification) {
-        this.orderIdentification = orderIdentification;
-    }
+
     public String getProductDetails() {
         return productDetails;
     }
-    public void setProductDetails(String productDetails) {
 
-        this.productDetails = productDetails;
-    }
     public String getProductList() {
         return productList;
-    }
-    public void setProductList(String productList) {
-        this.productList = productList;
     }
 
     @Override
@@ -43,6 +31,30 @@ public class Product {
                 ", productList='" + productList + '\'' +
                 '}';
     }
-}
 
+    public static class Builder {
+        private int orderIdentification;
+        private String productDetails;
+        private String productList;
+
+        public Builder setOrderIdentification(int orderIdentification) {
+            this.orderIdentification = orderIdentification;
+            return this;
+        }
+
+        public Builder setProductDetails(String productDetails) {
+            this.productDetails = productDetails;
+            return this;
+        }
+
+        public Builder setProductList(String productList) {
+            this.productList = productList;
+            return this;
+        }
+
+        public Product build() {
+            return new Product(this);
+        }
+    }
+}
 

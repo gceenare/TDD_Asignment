@@ -8,31 +8,34 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class CustomerTest {
 
+    private Customer customer;
+
     @BeforeEach
     void setUp() {
+        customer = new Customer.Builder()
+                .setAddress("123 Main Street")
+                .setPayment("Credit Card")
+                .build();
     }
 
     @AfterEach
     void tearDown() {
+        customer = null;
     }
 
     @Test
-    void getAddress() {
+    void testGetAddress() {
+        assertEquals("123 Main Street", customer.getAddress());
     }
 
     @Test
-    void setAddress() {
-    }
-
-    @Test
-    void getPayment() {
-    }
-
-    @Test
-    void setPayment() {
+    void testGetPayment() {
+        assertEquals("Credit Card", customer.getPayment());
     }
 
     @Test
     void testToString() {
+        String expected = "Customer{address='123 Main Street', payment='Credit Card'}";
+        assertEquals(expected, customer.toString());
     }
 }

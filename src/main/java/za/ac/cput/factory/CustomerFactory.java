@@ -1,22 +1,19 @@
 package za.ac.cput.factory;
 
 import za.ac.cput.domain.Customer;
-import java.util.Scanner;
 
 public class CustomerFactory {
 
     public static Customer createCustomer() {
-        Scanner scanner = new Scanner(System.in);
+        String address = "123 Main Street, Cape Town";
+        String payment = "Credit Card";
 
-        System.out.print("Enter Address: ");
-        String address = scanner.nextLine();
+        Customer customer = new Customer.Builder()
+                .setAddress(address)
+                .setPayment(payment)
+                .build();
 
-        System.out.print("Enter Payment Method: ");
-        String payment = scanner.nextLine();
-
-        Customer customer = new Customer(address, payment);
-
-        System.out.println("Customer Paid: " + customer);
+        System.out.println("Customer Created: " + customer);
 
         return customer;
     }
