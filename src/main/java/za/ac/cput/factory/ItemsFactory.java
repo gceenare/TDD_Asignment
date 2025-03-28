@@ -9,17 +9,10 @@ public class ItemsFactory {
         String itemsNames = "Asus";
         String itemPrice = "R 3999.00";
 
-        Items items = new Items.Builder()
+        return new Items.Builder()
+                .setOrderIdentification(orderIdentification) // Fixed: Added order ID
                 .setItemsNames(itemsNames)
                 .setItemPrice(itemPrice)
                 .build();
-
-        System.out.println("Items Created: " + items);
-
-        return items;
-    }
-
-    public static void main(String[] args) {
-        createItems();
     }
 }
