@@ -1,17 +1,21 @@
 //package za.ac.cput.domain;
 //
 //
-//    public class Delivery extends Payment {
-//        private final String name;
-//        private final String date;
-//        private final String address;
+//    public class Delivery  {
+//        private int orderIdentification;
+//        public String name;
+//        public String date;
+//        public String address;
 //
 //
 //        private Delivery(Builder builder) {
-//            super(builder); // Calls the parent class constructor
+//            this.orderIdentification= builder.orderIdentification;
 //            this.name = builder.name;
 //            this.date = builder.date;
 //            this.address = builder.address;
+//        }
+//            public String getOrderIdentification {
+//            return orderIdentification;
 //        }
 //
 //
@@ -29,10 +33,7 @@
 //
 ////        @Override
 ////        public String toString() {
-////            return "Delivery{" +
-////                    "orderIdentificationNumber=" + getOrderIdentificationNumber() +
-////                    ", amount=" + getAmount() +
-////                    ", paymentMethod='" + getPaymentMethod() + '\'' +
+////            return "Delivery{" + "orderIdentification" + orderIdentification
 ////                    ", name='" + name + '\'' +
 ////                    ", date='" + date + '\'' +
 ////                    ", address='" + address + '\'' +
@@ -40,11 +41,16 @@
 ////        }
 //
 //
-//        public static class Builder extends Payment.Builder {
+//        public static class Builder {
+//            private int orderIdentification;
 //            private String name;
 //            private String date;
 //            private String address;
 //
+//            public Builder setOrderIdentification(int orderIdentification){
+//              this.orderIdentification=orderIdentification;
+//                return this
+//              }
 //            public Builder setName(String name) {
 //                this.name = name;
 //                return this;
